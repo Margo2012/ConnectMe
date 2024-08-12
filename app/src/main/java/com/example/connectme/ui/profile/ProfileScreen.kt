@@ -24,14 +24,14 @@ import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import androidx.lifecycle.viewmodel.compose.viewModel
 import com.example.connectme.R
 import com.example.connectme.data.model.User
+import org.koin.androidx.compose.koinViewModel
 
 @SuppressLint("UnusedMaterial3ScaffoldPaddingParameter")
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun ProfileScreen(profileViewModel: ProfileViewModel = viewModel()) {
+fun ProfileScreen(profileViewModel: ProfileViewModel = koinViewModel()) {
     val userProfile by profileViewModel.userProfile.collectAsState()
 
     Scaffold(
