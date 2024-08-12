@@ -9,5 +9,9 @@ data class User(
     val id: Int,
     val name: String,
     val phoneNumber: String,
+    val city: String,
+    val dateOfBirth: String,
+    val zodiacSign: String,
+    val about: String,
     val profilePictureUrl: String
 )
