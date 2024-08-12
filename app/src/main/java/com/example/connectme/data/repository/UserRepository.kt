@@ -4,6 +4,7 @@ import com.example.connectme.data.model.User
 import com.example.connectme.db.UserDao
 import com.example.connectme.network.ApiService
 import kotlinx.coroutines.flow.Flow
+import kotlinx.coroutines.flow.emitAll
 import kotlinx.coroutines.flow.flow
 
 class UserRepository(private val apiService: ApiService, private val userDao: UserDao) {
@@ -24,6 +25,20 @@ class UserRepository(private val apiService: ApiService, private val userDao: Us
         emit(Unit)
     }
 
-    fun getUser(id: Int): Flow<User> = userDao.getUser(id)
+    fun getUserProfile(): Flow<User> = flow {
+        try {
+            val userProfile = apiService.getUserProfile()
+            userDao.apply {
+                deleteAll()
+                insert(userProfile)
+            }
+            emit(userProfile)
+        } catch (e: Exception) {
+            // If there's an error (e.g., network error), fetch from local database
+            emitAll(userDao.getUser())
+        }
+    }
+
+    fun getUser(id: Int): Flow<User> = userDao.getUser()
 
 }
