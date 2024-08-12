@@ -59,6 +59,8 @@ dependencies {
     implementation(libs.androidx.ui.graphics)
     implementation(libs.androidx.ui.tooling.preview)
     implementation(libs.androidx.material3)
+    implementation(libs.androidx.room.common)
+    implementation(libs.androidx.room.ktx)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
@@ -66,4 +68,22 @@ dependencies {
     androidTestImplementation(libs.androidx.ui.test.junit4)
     debugImplementation(libs.androidx.ui.tooling)
     debugImplementation(libs.androidx.ui.test.manifest)
+
+    //Retrofit
+    implementation (libs.retrofit)
+    implementation (libs.converter.gson)
+
+    // Lifecycle
+    implementation (libs.androidx.lifecycle.viewmodel.ktx)
+    implementation (libs.androidx.lifecycle.runtime.ktx.v262)
+
+    // Koin для Dependency Injection
+    implementation (libs.koin.android)
+    implementation (libs.koin.androidx.compose)
+
+    // Coroutines для работы в асинхронном режиме
+    implementation ("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.7.3")
+
+    // Testing
+    androidTestImplementation (libs.androidx.espresso.core.v351)
 }
