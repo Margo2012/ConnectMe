@@ -14,9 +14,15 @@ interface ApiService {
     fun refreshToken(@Body body: Map<String, String>): Call<TokenResponse>
     @POST("auth/phone")
     suspend fun authenticatePhoneNumber(phoneNumber: String)
+    @POST("api/v1/users/check-auth-code/")
+    suspend fun verifySmsCode(@Body body: Map<String, String>): TokenResponse
 
-    @POST("auth/sms")
-    suspend fun verifySmsCode(phoneNumber: String, code: String)
+    @POST("api/v1/users/register/")
+    suspend fun registerUser(@Body body: Map<String, String>): TokenResponse
+
+    @POST("api/v1/users/send-auth-code/")
+    suspend fun sendAuthCode(@Body body: Map<String, String>)
+
 }
 
-data class TokenResponse(val accessToken: String)
+data class TokenResponse(val accessToken: String, val refreshToken: String)

@@ -52,7 +52,7 @@ val databaseModule: Module = module {
 }
 
 val repositoryModule: Module = module {
-    single { UserRepository(get(), get()) }
+    single { UserRepository(get(), get(), get()) }
 }
 
 val viewModelModule: Module = module {
