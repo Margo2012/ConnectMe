@@ -10,6 +10,7 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
+import com.example.connectme.ui.profile.ProfileScreen
 import com.example.connectme.ui.theme.ConnectMeTheme
 
 class MainActivity : ComponentActivity() {
@@ -17,7 +18,8 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         setContent {
             ConnectMeTheme {
-              //TODO: Setup Navigation between screens here.
+                //TODO: Setup Navigation between screens here.
+                ProfileScreen()
             }
         }
     }
