@@ -83,6 +83,12 @@ dependencies {
 
     // Coroutines для работы в асинхронном режиме
     implementation ("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.7.3")
+    // Libphonenumber
+    implementation(libs.libphonenumber)
+
+    // Compose Mask Input
+    implementation(libs.input.mask.android)
+    implementation(libs.input.mask.compose)
 
     // Testing
     androidTestImplementation (libs.androidx.espresso.core.v351)

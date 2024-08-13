@@ -16,6 +16,8 @@ lifecycleRuntimeKtxVersion = "2.6.2"
 retrofit = "2.11.0"
 roomCommon = "2.6.1"
 roomKtx = "2.6.1"
+libphonenumber = "8.12.34"
+inputMask = "6.0.0"
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
@@ -41,6 +43,9 @@ koin-androidx-compose = { module = "io.insert-koin:koin-androidx-compose", versi
 retrofit = { module = "com.squareup.retrofit2:retrofit", version.ref = "retrofit" }
 androidx-room-common = { group = "androidx.room", name = "room-common", version.ref = "roomCommon" }
 androidx-room-ktx = { group = "androidx.room", name = "room-ktx", version.ref = "roomKtx" }
+libphonenumber = { module = "com.googlecode.libphonenumber:libphonenumber", version.ref = "libphonenumber" }
+input-mask-android = { module = "com.redmadrobot:input-mask-android", version.ref = "inputMask" }
+input-mask-compose = { module = "com.redmadrobot:input-mask-compose", version.ref = "inputMask" }
 
 [plugins]
 androidApplication = { id = "com.android.application", version.ref = "agp" }
